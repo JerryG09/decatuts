@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Student
+{% endblock %}
+
+{% block main %}
+<div id="preloder">
+	<div class="loader"></div>
+</div>
+
+
+<section class="std set-bg" data-setbg="static/img/grey.png">
+	<div class="container">
+
+		<div class="container" style="padding-top:0%;">
+			<br>
+
+			<div class="site-breadcrumb  text-white row">
+
+				<h2 class="text-center">Ongoing Classes</h2>
+				<div class=" w-5 p-1"></div>
+
+
+				<div class="">
+					<a href="/schedule" class="w-8 p-3 btn btn-outline-info btn-price" >new tutor</a>
+				</div>
+
+			</div>
+			<br><hr style="background-color: whitesmoke">
+
+			{% for subject in subjects %}
+			<div class="course-meta-area text-white">
+				<div class="row">
+
+					<div class="col-lg-10 offset-lg-1">
+						<h3>{{subject['subject']}} Tutorial</h3>
+						<div class="course-metas">
+							<div class="course-meta">
+								<div class="course-author">
+									<div class="ca-pic set-bg" data-setbg="static/img/tutors/2.jpg"></div>
+									<h6 class="btn-danger">Tutor</h6>
+									<p>{{subject['tutor_name']}}  <span></span></p>
+								</div>
+							</div>
+							<div class="course-meta">
+								<div class="cm-info">
+									<h6 >Days</h6>
+									<p>
+										{{subject['days_of_week'] }} </p>
+								</div>
+							</div>
+							<div class="course-meta">
+									<div class="cm-info">
+										<h6>Duration</h6>
+										<p>{{subject['hours_per_day']}} &nbsp; Hours per day&nbsp; for &nbsp; {{subject['duration']}}weeks  </p>
+									</div>
+								</div>
+							<div class="course-meta">
+								<div class="cm-info">
+									<h6>Total Cost </h6>
+									<p>₦{{subject["total"]}} <span class="rating">
+									</p>
+								</div>
+							</div>
+
+						</div>
+						<div class="btn btn-outline-dark text-white">View Progress</div>
+						</div>
+					</div>
+			</div>
+			{% endfor %}
+
+		</div>
+			<br><hr style="background-color: whitesmoke">
+	</div>
+	<style>
+
+	h6,h3,h2{
+		color: red;
+	}
+	</style>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--====== Javascripts & Jquery ======-->
+<script src="static/js/jquery-3.2.1.min.js"></script>
+<!-- <script>
+			$("#student").submit(function (e) {
+				e.preventDefault();   
+				let subject = $("#subject").val()
+				let address = $("#address").val()
+				if(subject == "" || address == ""){
+				  alert("Fill required fields")
+				  let x = document.getElementById("alert");
+				  x.style.display = "block";
+				}
+				else{
+				  alert("Successful");    
+				  let x = document.getElementById("alert");
+				  x.style.display = "block";
+				  document.getElementById("students").submit();
+				}
+			});
+		</script> -->
+
+{% endblock %}

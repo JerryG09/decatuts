@@ -1,2 +1,1 @@
-# decatuts
-decatus is an online solution that pair student to tutor
+A web app that connects qualified tutors with students/guardians that require their services
